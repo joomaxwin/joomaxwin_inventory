@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Product</title>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <form action="/products" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <label>Description:</label>
+        <textarea name="description"></textarea>
+        <label>Price:</label>
+        <input type="number" name="price" step="0.01">
+        <label>Quantity:</label>
+        <input type="number" name="quantity">
+        <button type="submit">Add Product</button>
+    </form>
+</body>
+</html>
+

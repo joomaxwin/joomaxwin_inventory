@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<!-- Sidebar Section -->
+<div class="sidebar">
+    <h2>Inventory</h2>
+    <nav>
+
+        <ul>
+            <li><a href="/" class="active">Overview</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/orders">Orders</a></li>
+            <li><a href="/reports">Reports</a></li>
+        </ul>
+    </nav>
+   
+</div>
+
+<!-- Main Content Section -->
+<div class="content">
+    <h1>Inventory</h1>
+    <a href="/products/new">Add Product</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.price %></td>
+            <td><%= product.quantity %></td>
+            <td>
+                <a href="/products/<%= product.id %>/edit">Edit</a>
+                <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</div>
+</body>
+</html>
